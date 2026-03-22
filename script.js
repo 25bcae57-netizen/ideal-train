@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const message = document.getElementById("message").value;
 
             try {
-                const response = await fetch("http://127.0.0.1:5000/contact", {
+                const response = await fetch("http://ideal-train-ep7qp.onrender.com/contact", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -382,7 +382,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     async function loadMessages() {
         try {
-            const res = await fetch("http://127.0.0.1:5000/messages");
+            const res = await fetch("http://ideal-train-ep7qp.onrender.com/messages");
             const data = await res.json();
 
             const container = document.getElementById("messageList");
@@ -410,7 +410,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     window.deleteMsg = function (id) {
-        fetch(`http://127.0.0.1:5000/delete/${id}`)
+        fetch(`http://ideal-train-ep7qp.onrender.com/delete/${id}`)
             .then(() => loadMessages());
     }
     loadMessages();
