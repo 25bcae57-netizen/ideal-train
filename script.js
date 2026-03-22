@@ -347,28 +347,70 @@ console.log('%c👋 Hello there!', 'font-size: 24px; font-weight: bold; color: #
 console.log('%cWelcome to S R Sanjeevini\'s portfolio website!', 'font-size: 14px; color: #64748b;');
 console.log('%cFeel free to explore the code. 🚀', 'font-size: 14px; color: #64748b;');
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("messageForm");
+    console.log("JS WORKING");
+    const form = document.getElementById("contactForm");
 
     if (form) {
-        form.addEventListener("submit", async function (e) {
+        form.addEventListener("submit", async (e) => {
             e.preventDefault();
 
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
 
-            console.log(name, email, message);
+            try {
+                const response = await fetch("http://127.0.0.1:5000/contact", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ name, email, message })
+                });
 
-            if (!name || !email || !message) {
-                alert("Please fill all fields");
-                return;
+                const result = await response.text();
+                alert(result);
+                form.reset();
+
+                loadMessages();
+
+            } catch (error) {
+                console.error("Error:", error);
+                alert("something went wrong!");
             }
-
-            // 🔥 PUT YOUR FIREBASE addDoc() CODE HERE
-
-            alert("Message Sent Successfully!");
-            form.reset();
         });
     }
-});
+    async function loadMessages() {
+        try {
+            const res = await fetch("http://127.0.0.1:5000/messages");
+            const data = await res.json();
 
+            const container = document.getElementById("messageList");
+            if (!container) return;
+
+            container.innerHTML = "";
+
+            data.forEach(msg => {
+                const div = document.createElement("div");
+
+                div.innerHTML = `
+  <h4>${msg.name}</h4>
+  <p>${msg.email}</p>
+  <p>${msg.message}</p>
+
+  <button onclick="deleteMsg(${msg.id})">Delete</button>
+`;
+                container.appendChild(div);
+            });
+
+        }
+        catch (err) {
+            console.error(err);
+        }
+    }
+
+    window.deleteMsg = function (id) {
+        fetch(`http://127.0.0.1:5000/delete/${id}`)
+            .then(() => loadMessages());
+    }
+    loadMessages();
+});

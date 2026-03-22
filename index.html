@@ -12,6 +12,8 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
 </head>
 
 <body>
@@ -326,7 +328,7 @@
                     <h3>Send Me a Message</h3>
                     <p>I'd love to hear from you! Fill out the form below.</p>
 
-                    <form id="messageForm">
+                    <form id="contactForm">
                         <div class="form-group">
                             <input type="text" id="name" placeholder="Your Name" required>
                         </div>
@@ -344,6 +346,7 @@
                             <span>Send Message</span>
                         </button>
                     </form>
+                    <div id="messageList"></div>
                 </div>
                 <span class="section-tag">Get In Touch</span>
                 <h2 class="section-title">Let's Connect</h2>
@@ -451,52 +454,7 @@
     <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
     </button>
-
     <script src="script.js"></script>
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyABFu14WXZ3nRIartcqtWhk0NF9HiRDP6Q",
-            authDomain: "sanjeevini-6bd31.firebaseapp.com",
-            projectId: "sanjeevini-6bd31",
-            storageBucket: "sanjeevini-6bd31.firebasestorage.app",
-            messagingSenderId: "207835631225",
-            appId: "1:207835631225:web:8e44ee8865a7a8c239cea8"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        const form = document.getElementById("messageForm");
-
-        form.addEventListener("submit", async (e) => {
-            e.preventDefault();
-
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message").value;
-
-            try {
-                await addDoc(collection(db, "messages"), {
-                    name,
-                    email,
-                    message,
-                    createdAt: new Date()
-                });
-
-                alert("Message Sent Successfully!");
-                form.reset();
-            } catch (error) {
-                console.error("Error:", error);
-            }
-        });
-    </script>
-
-
-
-
 </body>
 
 </html>
