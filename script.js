@@ -359,7 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const message = document.getElementById("message").value;
 
             try {
-                const response = await fetch("http://ideal-train-ep7qp.onrender.com/contact", {
+                const response = await fetch("https://ideal-train-ep7qp.onrender.com/contact", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -381,7 +381,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     async function loadMessages() {
         try {
-            const res = await fetch("http://ideal-train-ep7qp.onrender.com/messages");
+            const res = await fetch("https://ideal-train-ep7qp.onrender.com/messages");
             const data = await res.json();
 
             const container = document.getElementById("messageList");
@@ -409,7 +409,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     window.deleteMsg = function (id) {
-        fetch(`http://ideal-train-ep7qp.onrender.com/delete/${id}`)
+        fetch(`https://ideal-train-ep7qp.onrender.com/delete/${id}`)
             .then(() => loadMessages());
     }
     loadMessages();
