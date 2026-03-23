@@ -359,7 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const message = document.getElementById("message").value;
 
             try {
-                const response = await fetch("https://ideal-train-ep7qp.onrender.com/contact", {
+                const response = await fetch("https://ideal-train-e7qp.onrender.com/contact", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
