@@ -7,15 +7,14 @@ const app = express();
 // middleware
 app.use(cors());
 app.use(express.json());
-const connection = mysql.createConnection({
-  host: process.env.DB_HOST || process.env.MYSQLHOST,
-  user: process.env.DB_USER || process.env.MYSQLUSER,
-  password: process.env.DB_PASSWORD || process.env.MYSQLPASSWORD,
-  database: process.env.DB_NAME || process.env.MYSQLDATABASE,
-  port: process.env.DB_PORT || process.env.MYSQLPORT || 3306
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "Root/777/999",
+    database: "portfolio"
 });
 
-connection.connect(err => {
+db.connect(err => {
     if (err) {
         console.error("database connection failed:", err);
     } else {
@@ -32,7 +31,7 @@ app.get("/", (req, res) => {
 app.get("/messages", (req, res) => {
     const sql = "SELECT * FROM messages";
 
-    connection.query(sql, (err, result) => {
+    db.query(sql, (err, result) => {
         if (err) {
             console.error(err);
             return res.send("Error fetching messages");
@@ -47,7 +46,7 @@ app.post("/contact", (req, res) => {
 
     const sql = "INSERT INTO messages (name, email, message) VALUES (?, ?, ?)";
 
-    connection.query(sql, [name, email, message], (err, result) => {
+    db.query(sql, [name, email, message], (err, result) => {
         if (err) {
             console.error("Error inserting data:", err);
             return res.send("Error saving message");
@@ -61,7 +60,7 @@ app.post("/contact", (req, res) => {
 app.get("/delete/:id", (req, res) => {
     const id = req.params.id;
 
-    connection.query("DELETE FROM messages WHERE id = ?", [id], (err) => {
+    db.query("DELETE FROM messages WHERE id = ?", [id], (err) => {
         if (err) return res.send("Error deleting");
 
         res.send("Deleted");
