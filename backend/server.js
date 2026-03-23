@@ -8,10 +8,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 const db = mysql.createConnection({
-    host: "localhost",
+    host: "caboose.proxy.rlwy.net",
     user: "root",
-    password: "Root/777/999",
-    database: "portfolio"
+    password: "rGpHBCXOdLMyZrgGhuWIJptZaBhCgbRx",
+    port: 19069   
+    database: "railway"
 });
 
 db.connect(err => {
