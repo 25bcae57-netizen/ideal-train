@@ -11,7 +11,7 @@ const db = mysql.createConnection({
     host: "caboose.proxy.rlwy.net",
     user: "root",
     password: "rGpHBCXOdLMyZrgGhuWIJptZaBhCgbRx",
-    port: 19069   
+    port: 19069,
     database: "railway"
 });
 
