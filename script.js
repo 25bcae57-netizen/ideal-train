@@ -388,7 +388,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!container) return;
 
             container.innerHTML = "";
-
             data.forEach(msg => {
                 const div = document.createElement("div");
 

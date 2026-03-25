@@ -4,167 +4,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S R Sanjeevini | Portfolio</title>
+    <title>S R Sanjeevini</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar">
-        <h2>S R Sanjeevini</h2>
-    </nav>
+    <div class="navbar">
+        <h2>Sanjeevini</h2>
+        <button id="theme-toggle">🌙</button>
+    </div>
 
     <!-- HERO -->
-    <section class="hero">
-        <div class="hero-container">
-
-            <div class="hero-content">
-                <h1>Hello, I'm</h1>
-                <h2>S R Sanjeevini</h2>
+    <section>
+        <div class="container hero-container">
+            <div>
+                <h1>S R Sanjeevini</h1>
                 <h3>Frontend Developer</h3>
-                <p>BCA student passionate about web development.</p>
+                <p>BCA student passionate about building websites.</p>
             </div>
-
             <div class="hero-image">
-                <img src="images/profile.jpg" alt="Profile">
+                <img src="images/profile.jpg">
             </div>
-
         </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT me -->
     <section>
-        <h2>About Me</h2>
-        <p>
-            I am a BCA 1st year student with a passion for building modern websites.
-            I am continuously learning new technologies and aiming to become a full-stack developer.
-            with a deep interset i creating beautiful and functional web experinces.
-            My hobbies are dancing,watching tv,reading booksetc
-        </p>
+        <div class="container">
+            <h2>About me</h2>
+            <p>I am a passionate student learning full-stack development.
+                iam intersted in buliding beautifull website with deeper meaning.
+                my hobbies are dancing, reading books,binge watching movies etc.
+            </p>
+        </div>
     </section>
 
+    <!-- SKILLS -->
+    <section>
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>C</li>
+                <li>C++</li>
+                <li>Python</li>
+                <li>Java</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+        <div class="container">
+            <h2>Projects</h2>
+
+            <div class="card">Portfolio Website</div>
+            <div class="card">Web Page Design</div>
+
+        </div>
+    </section>
 
     <!-- EDUCATION -->
     <section>
-        <h2>Education</h2>
-
-        <div class="education-item">
-            <h3>Bachelor of Computer Applications (BCA)</h3>
-            <p>1st Year (2nd Semester) - Currently Pursuing</p>
-        </div>
-
-        <div class="education-item">
-            <h3>2nd PUC</h3>
-            <p>Completed with <strong>85%</strong></p>
-            <p>st.charles womens pu college</p>
-        </div>
-
-        <div class="education-item">
-            <h3>10th Standard</h3>
-            <p>Completed with <strong>79.5%</strong></p>
-            <p>new florence publi school</p>
-        </div>
-        <!-- EDUCATION -->
-        <section>
+        <div class="container">
             <h2>Education</h2>
 
-            <div class="education-item">
-                <h3>Bachelor of Computer Applications (BCA)</h3>
-                <p>1st Year (2nd Semester) - Currently Pursuing</p>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <h3>BCA</h3>
+                        <p>1st Year
+                        <p>76%</p>
+                        <p>(2nd Sem)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                    <div class="timeline-content">
+                        <h3>2nd PUC</h3>
+                        <p>85%</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-book"></i></div>
+                    <div class="timeline-content">
+                        <h3>10th</h3>
+                        <p>79.5%</p>
+                    </div>
+                </div>
+
             </div>
+        </div>
+    </section>
 
-            <div class="education-item">
-                <h3>2nd PUC</h3>
-                <p>Completed with <strong>85%</strong></p>
-            </div>
-
-            <div class="education-item">
-                <h3>10th Standard</h3>
-                <p>Completed with <strong>79.5%</strong></p>
-            </div>
-        </section>
-
-        <!-- QUALIFICATIONS -->
-        <section>
-            <h2>Qualifications</h2>
-            <ul>
-                <li>Basic knowledge of Web Development</li>
-                <li>Strong understanding of programming fundamentals</li>
-            </ul>
-        </section>
-
-        <!-- SKILLS -->
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li>HTML, CSS, JavaScript</li>
-                <li>C, C++, Python</li>
-            </ul>
-        </section>
-
-        <!-- PROJECTS -->
-        <section id="projects">
-            <h2>Projects</h2>
-
-            <div class="project">
-                <h3>Portfolio Website</h3>
-                <p>Built using HTML, CSS, JavaScript</p>
-            </div>
-        </section>
-
-        <!-- ACHIEVEMENTS -->
-        <section>
+    <!-- ACHIEVEMENTS -->
+    <section>
+        <div class="container">
             <h2>Achievements</h2>
             <ul>
-                <li>I HAVE GOT SECOND PLACE IN SHORT FLIM</li>
-                <li>I HAVE SECURED SECOND PLACE IN RUNNING RACE COMPETITION</li>
-                <li>COMPELETED COLLEGE MINI PROJECT</li>
+                <li>Participated in photograhy competition</li>
+                <li>built web developement project</li>
             </ul>
-        </section>
+        </div>
+    </section>
 
-        <!-- CERTIFICATES -->
-        <section>
+    <!-- CERTIFICATES -->
+    <section>
+        <div class="container">
             <h2>Certificates</h2>
             <ul>
+                <li>Mongodb</li>
                 <li>Nasscom</li>
-                <li>iNFOSYS</li>
-                <li>MONGODB</li>
-                <li>MICROSOFT</li>
+                <li>Infosys</li>
             </ul>
-        </section>
+        </div>
+    </section>
 
-        <!-- CONTACT -->
-        <section id="contact">
-            <h2>Contact</h2>
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact</h2>
 
-            <form id="contactForm">
-                <input type="text" id="name" placeholder="Name" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <textarea id="message" placeholder="Message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <textarea id="message" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
 
-            <div class="contact-info">
-                <p>Email: ssanjeevini2006@gmail.com</p>
-                <p>Phone: +91 7022044020</p>
-                <p><a href="https://github.com/25bcae57-netizen" target="_blank">GitHub</a></p>
-                <p><a href="https://www.linkedin.com/in/s-r-sanjeevini-843183330/" target="_blank">LinkedIn</a></p>
-            </div>
-        </section>
+        <div class="contact-info">
+            <p>Email: ssanjeevini2006@gmail.com</p>
+            <p>Phone: +91 7022044020</p>
+            <p><a href="https://github.com/25bcae57-netizen" target="_blank">GitHub</a></p>
+            <p><a href="https://www.linkedin.com/in/s-r-sanjeevini-843183330/" target="_blank">LinkedIn</a></p>
+        </div>
+    </section>
 
-        <footer>
-            <p>© 2026 S R Sanjeevini</p>
-        </footer>
+    <footer>
+        <p>© 2026 S R Sanjeevini</p>
+    </footer>
 
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
